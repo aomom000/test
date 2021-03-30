@@ -66,7 +66,8 @@
 
     function open_po(idx,cus_id){
         qty = document.getElementById("n"+idx);
-        alert("product_code="+arr[idx][1]+"="+qty.value);
+        price = arr[idx][5];
+        alert("product_code="+arr[idx][1]+"="+qty.value+",price="+price);
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){ 
             if(this.readyState==4 && this.status==200){
@@ -75,7 +76,7 @@
         }
         xhttp.open("POST","product_rest.php",true);
         xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xhttp.send("p_id="+arr[idx][0]+"&p_qty="+qty.value+"&cus_id="+cus_id);
+        xhttp.send("p_id="+arr[idx][0]+"&p_qty="+qty.value+"&p_price="+price+"&cus_id="+cus_id);
     }
     </script>
 </body>
