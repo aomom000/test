@@ -26,7 +26,7 @@
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if(this.readyState==4 && this.status==200){
-                alert(arr);
+                //alert(arr);
                 arr= JSON.parse(this.responseText);
                 text = "<table border='1'>";
                 for(i=0;i<label.length-1;i++){
@@ -67,7 +67,7 @@
     function open_po(idx,cus_id){
         qty = document.getElementById("n"+idx);
         price = arr[idx][5];
-        alert("product_code="+arr[idx][1]+"="+qty.value+",price="+price);
+        //alert("product_code="+arr[idx][1]+"="+qty.value+",price="+price);
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){ 
             if(this.readyState==4 && this.status==200){

@@ -13,12 +13,7 @@
     function product_list(){
         $db = new database();
         $db->connect();
-        $sql = "SELECT Product_id,Product_code,Product_Name,
-                       brand.Brand_name, unit.Unit_name,
-                       product.Cost, product.Stock_Quantity
-                FROM  product,brand,unit 
-                WHERE product.Brand_ID = brand.Brand_id
-                and   product.Unit_ID  = unit.Unit_id";
+        $sql = "SELECT * FROM product"; 
         $result = $db->query($sql);
         $db->close();
         return $result;
